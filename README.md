@@ -1,3 +1,5 @@
 # shopping-app-apm-tracing
-![Components Architecture](./ShoppingAppMicroservices-APMTestDiagram.svg?raw=false "ShoppingAppMicroservices-APMTestDiagram")
+
+![Shopping App Components Architecture](ShoppingAppMicroservices-APMTestDiagram.svg?sanitize=true)
+<img src="ShoppingAppMicroservices-APMTestDiagram.svg?sanitize=true">
 
