@@ -21,6 +21,6 @@ The above client applications are merged into one since the intension here is to
 
 * Kafka & Zookeeper: The service to produce & consume documents.
 
-* APM Server: The APM Server is hosted along with the Elasticsearch & Kibana Dashboard. It consumes the transactions / events data from various agents running in the services.
+* <b>APM Server:</b> The APM Server is hosted along with the <b>Elasticsearch & Kibana</b> Dashboard. It consumes the transactions / events data from various agents running in the services.
 
-* APM Agent: There are two agents being used in this architecture, the apm-java-agent & the apm-javascript-agent. The agent runs along with the application to send the events data to the APM-server on regular intervals.
+* <b>APM Agent:</b> There are two agents being used in this architecture, the apm-java-agent & the apm-javascript-agent. The agent runs along with the application to send the events data to the APM-server on regular intervals.

@@ -1,0 +1,25 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.6.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+
+group = 'com.maqs.apm'
+version = '1.0'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	compile group: 'com.maqs', name: 'commons', version: '1.0'
+}

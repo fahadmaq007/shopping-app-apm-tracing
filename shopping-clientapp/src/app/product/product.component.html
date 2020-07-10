@@ -1,0 +1,28 @@
+<div class="twoColFlex">
+<div class="col right-col">
+  <h2 class="section-title">{{ 'availableProducts' | translate }}</h2>
+  <div>
+    <mat-progress-spinner *ngIf="!products"
+                          class="progress-spinner"
+                          [color]="'primary'"
+                          [mode]="'indeterminate'">
+    </mat-progress-spinner>
+    <mat-form-field>
+      <input matInput type="text" placeholder="{{ 'productSearch' | translate }}" (keyup.enter)="getProducts()" [(ngModel)]="search"/>
+    </mat-form-field>
+    <mat-card class="product-card margin" *ngFor="let product of products">
+      <img *ngFor="let url of product.imageUrls" mat-card-avatar src="{{ url }}" alt="{{product.name}}"/>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-subtitle>{{ product.description }}</mat-card-subtitle>
+      <mat-card-subtitle>Rs. {{ product.price }}</mat-card-subtitle>
+
+      <mat-card-actions>
+          <button mat-raised-button (click)="addProductToCurrentList(product)">
+              <mat-icon class="add-icon">add</mat-icon>
+              {{ 'addToShoppingList' | translate}}
+            </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+</div>

@@ -1,0 +1,6 @@
+.angular-cli.json
+.editorconfig
+.travis.yml
+CONTRIBUTING.md
+shopping-clientapp/e2e
+shopping-clientapp/node_modules_

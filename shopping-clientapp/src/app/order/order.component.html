@@ -1,0 +1,63 @@
+<div class="text-right padding">
+    <a mat-raised-button aria-label="Refresh Orders" color="primary" (click)="getOrders()">
+      <mat-icon>refresh</mat-icon> Refresh Orders
+    </a>
+</div>
+<div class="twoColFlex">
+  <div class="col">
+    <mat-progress-spinner *ngIf="!orders" class="progress-spinner" [color]="'primary'" [mode]="'indeterminate'">
+    </mat-progress-spinner>
+    <h2 class="section-title">{{ 'Pages.Order.Pending' | translate }}</h2>
+    <mat-divider></mat-divider>
+    <div *ngFor="let order of orders">
+      <mat-card class="product-card margin" *ngIf="order.status == &quot;ORDER_PLACED&quot;">
+        <mat-card-header>
+          <mat-card-title>Order for {{order.products.length}} product(s)</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <mat-list>
+            <mat-list-item *ngFor="let product of order.products">
+              <mat-card-title>{{product.name}}</mat-card-title>
+            </mat-list-item>
+            <mat-list-item>
+              <span> Deliver at: {{ order.deliveryAddress }}</span>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+        <mat-card-actions class="text-right">
+          <button mat-flat-button primary (click)="confirmOrder(order)">
+            <span class="mat-button-wrapper">CONFIRM & DISPATCH</span>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  
+  <div class="col right-col">
+    <h2 class="section-title">{{ 'Pages.Order.Confirmed' | translate }}</h2>
+    <mat-divider></mat-divider>
+    <div *ngFor="let order of orders">
+      <mat-card class="product-card margin" *ngIf="order.status != 'ORDER_PLACED'">
+        <mat-card-header>
+          <mat-card-title>Order for {{order.products.length}} product(s)</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <mat-list>
+            <mat-list-item *ngFor="let product of order.products">
+              <mat-card-title>{{product.name}}</mat-card-title>
+            </mat-list-item>
+            <mat-list-item *ngIf="order.status == 'APPROVED'">
+                <span> {{ 'Pages.Order.Confirmed' | translate }} but not DISPATCHED yet</span>
+              </mat-list-item>
+            <mat-list-item *ngIf="order.status == 'DISPATCHED'">
+              <span> {{ 'Pages.Order.Dispatched' | translate }} to: {{ order.deliveryAddress }}</span>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+</div>

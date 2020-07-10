@@ -1,0 +1,53 @@
+{
+  "Pages": {
+    "Order": {
+      "Title": "Manage Orders",
+      "Headline": "Orders",
+      "Pending": "Pending Approval",
+      "Confirmed": "Approved",
+      "Dispatched": "Dispatched"
+    },
+    "Shopping": {
+      "Title": "Cart",
+      "Headline": "Checkout Shopping Cart"
+    },
+    "Product": {
+      "Title": "Products",
+      "Headline": "Welcome to a wide range of products"
+    },
+    "Vendor": {
+      "Title": "Vendor App",
+      "Headline": "Vendors"
+    },
+    "Courier": {
+      "Title": "Courier App",
+      "Headline": "Couriers"
+    },
+    "ShoppingList": {
+      "Title": "Shopping Cart"
+    }
+  },
+  "error404": "404 Error",
+  "angularShoppingListsApp": "Shopping App",
+  "shoppingLists": "Shopping lists",
+  "shoppingListCreated": "Shopping list is created",
+  "saved": "Saved",
+  "shoppingListRemoved": "Shopping list is removed",
+  "shoppingListDefault": "It's a default shopping list, you cannot delete it",
+  "createShoppingList": "Create shopping list",
+  "removeShoppingList": "Remove shopping list",
+  "areYouSure": "Are you sure?",
+  "name": "Name",
+  "create": "Create",
+  "yes": "Yes",
+  "no": "No",
+  "availableProducts": "Available products",
+  "addToShoppingList": "Add to Cart",
+  "productSearch": "Search products",
+  "productAdded": "The product is added",
+  "productRemovedFromShoppingList": "The product is removed",
+  "removeFromShoppingList": "Remove from shopping list",
+  "shoppingListName": "Shopping list name",
+  "save": "Save",
+  "placeOrder": "Place Order"
+}

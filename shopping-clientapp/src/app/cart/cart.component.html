@@ -1,0 +1,41 @@
+<div>
+  <header>
+    <div *ngIf="shoppingListProducts.length > 0">
+      <div class="md-toolbar-tools padding text-right">
+        <button mat-flat-button primary (click)="placeOrder()">
+          <span class="mat-button-wrapper">{{ 'placeOrder' | translate}}</span>
+        </button>
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+    
+  </header>
+
+
+  <div class="twoColFlex padding">
+    <div class="col">
+      <div *ngIf="! shoppingListProducts.length">
+        <h3>Your Cart is empty</h3>
+        Go to <a routerLink="/products">Products</a> to add them to the Cart
+      </div>
+      <div>
+        <mat-progress-spinner *ngIf="!shoppingList" class="progress-spinner" [color]="'primary'" [mode]="'indeterminate'">
+        </mat-progress-spinner>
+        <mat-card class="product-card" *ngFor="let slProduct of shoppingListProducts">
+          <mat-card-title-group>
+            <img *ngIf="slProduct.imageUrls" mat-card-avatar src="{{ slProduct.imageUrls[0] }}" alt="{{slProduct.name}}" />
+            <mat-card-title>{{ slProduct.name }}</mat-card-title>
+            <mat-card-subtitle>{{ slProduct.price }} </mat-card-subtitle>
+
+          </mat-card-title-group>
+
+          <button mat-raised-button (click)="removeProductFromShoppingList(slProduct)">
+            <mat-icon class="remove-icon">remove</mat-icon>
+            {{ 'removeFromShoppingList' | translate}}
+          </button>
+
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

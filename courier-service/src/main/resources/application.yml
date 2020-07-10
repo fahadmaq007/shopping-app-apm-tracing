@@ -1,0 +1,22 @@
+server:
+  port: 9099
+spring:
+  application:
+    name: cmf-in
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      group-id: shopping
+    topics: confirmed_orders
+couch:
+  url: http://localhost:5984
+  db: order
+document:
+  attributes:
+    required: type, products, status
+logging:
+  level:
+    root: WARN
+    com.causeway: DEBUG
+    org.springframework: INFO
+    co.elastic: DEBUG
